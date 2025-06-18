@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/members.css') }}">
+
+<div class="members-container">
+    <!-- Example Member Card -->
+    <div class="member-card">
+        <div class="member-image">
+            <img src="{{ url_for('static', filename='images/default-avatar.jpg') }}" alt="Member Name">
+        </div>
+        <h3 class="member-name">John Doe</h3>
+        <div class="member-organization">IoT Club</div>
+        <div class="member-role">Technical Lead</div>
+        <p class="member-quote">
+            Working with the IoT Club has been an amazing experience. We've created innovative solutions and learned so much together.
+        </p>
+    </div>
+
+    <!-- Add more member cards as needed -->
+    <div class="member-card">
+        <div class="member-image">
+            <img src="{{ url_for('static', filename='images/default-avatar.jpg') }}" alt="Member Name">
+        </div>
+        <h3 class="member-name">Jane Smith</h3>
+        <div class="member-organization">IoT Club</div>
+        <div class="member-role">Project Manager</div>
+        <p class="member-quote">
+            Leading projects in the IoT Club has helped me develop both technical and leadership skills.
+        </p>
+    </div>
+
+    <div class="member-card">
+        <div class="member-image">
+            <img src="{{ url_for('static', filename='images/default-avatar.jpg') }}" alt="Member Name">
+        </div>
+        <h3 class="member-name">Mike Johnson</h3>
+        <div class="member-organization">IoT Club</div>
+        <div class="member-role">Hardware Specialist</div>
+        <p class="member-quote">
+            The IoT Club provides an excellent platform for experimenting with cutting-edge technologies.
+        </p>
+    </div>
+</div>
+{% endblock %}
