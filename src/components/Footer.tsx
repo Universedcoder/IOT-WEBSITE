@@ -62,7 +62,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
-          <p>Made with ❤️ by Mohnish Singh & Rishabh Pawani | Copyright 2024 | All Rights Reserved</p>
+          <p>Made with ❤️ by <a href="https://owner.chikaz.com/" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">Mohnish Singh</a> & <a href="https://pawani0.github.io/myself/" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">Rishabh Pawani</a> | Copyright 2024 | All Rights Reserved</p>
         </div>
       </div>
     </footer>

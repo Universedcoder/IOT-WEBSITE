@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { GraduationCap, Users, Lightbulb, Send, ArrowRight, Code, Cpu, Database, Globe, CheckCircle2, Trophy, Target } from 'lucide-react';
+import { GraduationCap, Users, Lightbulb, Send, ArrowRight, Cpu, Trophy } from 'lucide-react';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import EventCard from './components/EventCard';
 import Events from './pages/Events';
 import Contact from './pages/Contact';
 import Members from './pages/Members';
 import Initiatives from './pages/Initiatives';
+import CampusAmbassador from './pages/CampusAmbassador'; // Added import for CampusAmbassador
 import EventPopup from './components/EventPopup';
 import AmbassadorRegistration from './components/AmbassadorRegistration';
 import EventDetails from './pages/EventDetails';
@@ -25,6 +25,10 @@ import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 function App() {
   const [showEventPopup, setShowEventPopup] = useState(false);
   const [isAmbassadorModalOpen, setIsAmbassadorModalOpen] = useState(false);
+
+  const openAmbassadorModal = () => setIsAmbassadorModalOpen(true);
+  const closeAmbassadorModal = () => setIsAmbassadorModalOpen(false);
+
 
   // Debug log for environment variable
   console.log('API Key available:', !!import.meta.env.VITE_GEMINI_API_KEY);
@@ -69,42 +73,6 @@ function App() {
       description: "certifications of participation on merit basis"
     },
 
-  ];
-
-  const courses = [
-    {
-      title: "IoT Fundamentals",
-      duration: "3 months",
-      level: "Beginner",
-      features: [
-        "Basic electronics and programming",
-        "Sensor integration",
-        "Cloud connectivity",
-        "Project development"
-      ]
-    },
-    {
-      title: "Advanced IoT",
-      duration: "4 months",
-      level: "Intermediate",
-      features: [
-        "Complex sensor networks",
-        "Data analytics",
-        "Industrial IoT applications",
-        "Advanced project work"
-      ]
-    },
-    {
-      title: "IoT Security",
-      duration: "2 months",
-      level: "Advanced",
-      features: [
-        "Security protocols",
-        "Encryption methods",
-        "Vulnerability assessment",
-        "Security best practices"
-      ]
-    }
   ];
 
   const projects = [
@@ -190,9 +158,7 @@ function App() {
       <div className="flex flex-col min-h-screen">
         <Navbar />
         {showEventPopup && <EventPopup onClose={() => setShowEventPopup(false)} />}
-        {isAmbassadorModalOpen && (
-          <AmbassadorRegistration onClose={() => setIsAmbassadorModalOpen(false)} />
-        )}
+        {isAmbassadorModalOpen && <AmbassadorRegistration onClose={closeAmbassadorModal} />}
         <Routes>
           <Route path="/" element={
             <main>
@@ -495,6 +461,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/members" element={<Members />} />
           <Route path="/initiatives" element={<Initiatives />} />
+          <Route path="/campus-ambassador" element={<CampusAmbassador openAmbassadorModal={openAmbassadorModal} />} /> {/* Added Campus Ambassador Route */}
         </Routes>
         <ChatBot />
       </div>

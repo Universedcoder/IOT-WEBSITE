@@ -21,7 +21,7 @@ export default function Navbar() {
               <img 
                 src={logo} 
                 alt="IoT CoE Logo" 
-                className="h-12 w-auto transform transition-transform duration-300 group-hover:scale-105" 
+                className="h-12 w-auto" 
               />
             </Link>
           </div>
@@ -32,6 +32,7 @@ export default function Navbar() {
               { to: "/events", label: "Events" },
               { to: "/members", label: "Members" },
               { to: "/initiatives", label: "Initiatives" },
+              { to: "/campus-ambassador", label: "Campus Ambassador" },
               { to: "/contact", label: "Contact" }
             ].map((item) => (
               <Link
@@ -88,6 +89,7 @@ export default function Navbar() {
             { to: "/events", label: "Events" },
             { to: "/members", label: "Members" },
             { to: "/initiatives", label: "Initiatives" },
+            { to: "/campus-ambassador", label: "Campus Ambassador" },
             { to: "/contact", label: "Contact" }
           ].map((item) => (
             <Link
